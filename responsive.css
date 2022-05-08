@@ -1,0 +1,90 @@
+@media only screen and (max-width: 820px) {
+  .profilePic__container {
+    width: 150px;
+    height: 150px;
+    padding: 0.35rem;
+  }
+
+  .hero__text__container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  h5.hero__main__heading {
+    font-size: 1.05rem;
+  }
+
+  h5.hero__secondary__heading {
+    font-size: 1.5rem;
+  }
+
+  .section__heading {
+    font-size: 1.85rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  .card__img__container img {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .card.card__experience .card-body {
+    height: auto !important;
+  }
+
+  .skills__card__container {
+    margin: 0 auto;
+    padding: 0 !important;
+  }
+
+  #formProject .form__btn__container {
+    text-align: left;
+  }
+  #formProject .form__btn__container button {
+    display: block;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  nav .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  nav .text-right > a {
+    display: none;
+  }
+  nav .mobile__nav__btn {
+    display: inline-block;
+  }
+  nav .mobile__nav__btn .nav__drawer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav .mobile__nav__btn .nav__drawer ul {
+    display: block;
+    text-align: center;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  #about,
+.fe__skills, .be__skills {
+    height: auto;
+  }
+
+  .flex-center:not(.flex-column) {
+    display: flex;
+    align-items: unset;
+    justify-content: unset;
+  }
+
+  .row.w-100 {
+    width: unset !important;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */
