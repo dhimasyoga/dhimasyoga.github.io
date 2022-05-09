@@ -48,6 +48,13 @@
   }
 }
 @media only screen and (max-width: 480px) {
+  html, body {
+    scroll-padding-top: 60px;
+  }
+
+  nav {
+    height: 60px;
+  }
   nav .container {
     grid-template-columns: 1fr 1fr;
   }
@@ -71,19 +78,37 @@
     display: none;
   }
 
+  #hero {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+  }
+
   #about,
 .fe__skills, .be__skills {
     height: auto;
   }
 
-  .flex-center:not(.flex-column) {
+  #services {
+    padding-top: 0 !important;
+  }
+
+  .flex-center:not(.flex-column),
+#experience .container {
     display: flex;
     align-items: unset;
     justify-content: unset;
   }
 
+  #experience .container {
+    height: auto;
+  }
+
   .row.w-100 {
     width: unset !important;
+  }
+
+  footer {
+    margin-top: 1.5rem;
   }
 }
 

@@ -125,6 +125,10 @@ textarea.form-control {
     flex-direction: column;
 }
 
+.swal-text {
+    text-align: center;
+}
+
 /* ========== NAVIGATION ========== */
 
 nav {
@@ -248,7 +252,7 @@ nav {
             }
         }
 
-        input[type="checkbox"]:checked {
+        .sidebar__toggle:checked {
             ~ .menu-items {
                 transform: translateX(0);
             }

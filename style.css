@@ -103,6 +103,10 @@ textarea.form-control:focus + i.far {
   flex-direction: column;
 }
 
+.swal-text {
+  text-align: center;
+}
+
 /* ========== NAVIGATION ========== */
 nav {
   background-color: #131517;
@@ -200,23 +204,23 @@ nav .mobile__nav__btn .nav__drawer ul li a {
   transform-origin: 0% 100%;
   transition: transform 0.4s ease-in-out;
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .menu-items {
+.mobile__nav__btn .sidebar__toggle:checked ~ .menu-items {
   transform: translateX(0);
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .hamburger-lines .line1 {
+.mobile__nav__btn .sidebar__toggle:checked ~ .hamburger-lines .line1 {
   transform: rotate(45deg);
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .hamburger-lines .line2 {
+.mobile__nav__btn .sidebar__toggle:checked ~ .hamburger-lines .line2 {
   transform: scaleY(0);
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .hamburger-lines .line3 {
+.mobile__nav__btn .sidebar__toggle:checked ~ .hamburger-lines .line3 {
   transform: rotate(-45deg);
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .nav__drawer {
+.mobile__nav__btn .sidebar__toggle:checked ~ .nav__drawer {
   width: 100%;
   transition: width 0.5s;
 }
-.mobile__nav__btn input[type=checkbox]:checked ~ .nav__drawer ul {
+.mobile__nav__btn .sidebar__toggle:checked ~ .nav__drawer ul {
   left: 0;
   transition: ease-in 0.2s;
 }

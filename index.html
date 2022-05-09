@@ -19,7 +19,10 @@
 		<script src="https://unpkg.com/scrollreveal@4"></script>
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-		<script src="https://unpkg.com/vue@3"></script>
+		
+		<!-- Vue -->
+		<!-- <script src="https://unpkg.com/vue@3"></script> -->
+		<script src="https://unpkg.com/vue@3.2.33/dist/vue.global.prod.js"></script>
 	</head>
 	<body>
 		<div id="app">
@@ -48,7 +51,7 @@
 						</a>
 
 						<div class="mobile__nav__btn">
-							<input class="checkbox" type="checkbox" name="" id="" />
+							<input class="checkbox sidebar__toggle" type="checkbox" name="" id="" />
 							<div class="hamburger-lines">
 								<span class="line line1"></span>
 								<span class="line line2"></span>
@@ -92,7 +95,7 @@
 			</main>
 
 			<!-- About Section -->
-			<section id="about" class="py-5 py-lg-0 flex-center section">
+			<section id="about" class="pt-2 pb-5 py-lg-0 mb-5 mb-lg-0 flex-center section">
 				<div class="container w-100">
 					<div class="row w-100">
 						<div class="col-lg-5 mb-5 mb-lg-0">
@@ -112,7 +115,7 @@
 			</section>
 
 			<!-- Skills Section -->
-			<section id="skills" class="py-5 py-lg-0 section">
+			<section id="skills" class="pt-2 pb-5 py-lg-0 section mb-5 mb-lg-0">
 				<div class="container fe__skills d-flex align-items-center mb-5 mb-lg-0">
 					<div class="row">
 						<div class="col-lg-5">
@@ -122,7 +125,7 @@
 							</h4>
 						</div>
 						<div class="col-lg-7 row skills__card__container">
-							<div v-for="f in fe_skills" class="col-sm-3 col-6 mb-3">
+							<div v-for="f in fe_skills" class="col-sm-3 col-4 mb-3">
 								<div class="skills__card card__fe card border-0">
 									<img :src="'resources/images/' + f.img" :alt="f.alt">
 								</div>
@@ -140,7 +143,7 @@
 							</h4>
 						</div>
 						<div class="col-lg-7 row skills__card__container">
-							<div v-for="b in be_skills" class="col-sm-3 col-6 mb-3">
+							<div v-for="b in be_skills" class="col-sm-3 col-4 mb-3">
 								<div class="skills__card card__be card border-0">
 									<img :src="'resources/images/' + b.img" :alt="b.alt">
 								</div>
@@ -151,7 +154,7 @@
 			</section>
 
 			<!-- Services Section -->
-			<section id="services" class="py-5 py-lg-0 section">
+			<section id="services" class="pt-2 pb-5 py-lg-0 mb-5 mb-lg-0 section">
 				<div class="container">
 					<div class="row w-100">
 						<div class="col-lg-4">
@@ -166,7 +169,7 @@
 							</p>
 						</div>
 						<div class="col-lg-7 offset-lg-1">
-							<div v-for="s, index in services" class="services py-3 mb-3 mb-lg-5 text-white">
+							<div v-for="s, index in services" class="services py-3 text-white" :class="index != (services.length - 1) ? 'mb-3 mb-lg-5' : ''">
 								<div class="row">
 									<div class="col-lg-2 mb-4 mb-lg-0">
 										<p class="services__number mb-0">0{{ index + 1 }}.</p>
@@ -187,8 +190,8 @@
 			</section>
 
 			<!-- Experience Section -->
-			<section id="experience" class="py-5 py-lg-0 section">
-				<div class="container w-100 mb-5 py-5">
+			<section id="experience" class="pt-2 pb-5 py-lg-0 mb-5 mb-lg-0 section">
+				<div class="container w-100 mb-5 pb-5">
 					<h2 class="section__heading mb-4">
 						Work <span class="penting">Experience</span>
 					</h2>
@@ -222,11 +225,11 @@
 					</div>
 				</div>
 
-				<div class="container w-100 mb-5">
+				<div class="container w-100 pt-4 pt-lg-0">
 					<h2 class="section__heading mb-4">
 						I also do a bit of <span class="penting">freelancing...</span>
 					</h2>
-					<div class="card border-0 card__experience text-white">
+					<div class="card border-0 card__ text-white">
 						<div class="row">
 							<div class="col-lg-5 pe-lg-0">
 								<div class="card__img__container">
@@ -263,10 +266,10 @@
 			</section>
 
 			<!-- Contact Section -->
-			<section id="contact" class="py-5 py-lg-0">
+			<section id="contact" class="py-2 py-lg-0">
 				<div class="container px-0 w-100">
 					<div class="row m-0 w-100">
-						<div class="col-lg-5 mb-5 mb-lg-0 d-flex flex-column justify-content-between order-2 order-lg-1">
+						<div class="col-lg-5 d-flex flex-column justify-content-between order-2 order-lg-1">
 							<div class="d-none d-lg-block mb-4 mb-lg-0">
 								<h2 class="section__heading">
 									Let's 
@@ -317,14 +320,14 @@
 
 							<div class="card border-0">
 								<div class="card-body p-4">
-									<form action="" @submit.prevent="submitForm()" id="formContact">
+									<form action="https://formspree.io/f/xoqryqyv" method="POST" @submit.prevent="submitForm($event)" id="formContact">
 										<div class="form-group position-relative mb-4">
 											<label for="emailContact">Your Email</label>
 
 											<input type="email" name="email" id="emailContact"
 											placeholder="happycustomer@gmail.com"
 											class="form-control shadow-none" v-model="email"
-											autocomplete="off" autofocus required>
+											autocomplete="off" required>
 											<i class="far fa-envelope"></i>
 										</div>
 
@@ -367,7 +370,7 @@
 					<div class="modal-content">
 						<div class="modal-header p-0">
 							<h5 class="modal-title service__title p-3">Modal title</h5>
-							<button type="button" class="btn-close m-0 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+							<button type="button" class="btn-close m-0 p-0 detail__service__close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body service__detail"></div>
 					</div>
@@ -383,7 +386,7 @@
 							<button type="button" class="btn-close m-0 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body p-4">
-							<form action="" id="formProject" @submit.prevent="submitForm()" method="POST">
+							<form action="https://formspree.io/f/xoqryqyv" method="POST" id="formProject" @submit.prevent="submitForm($event)">
 								<div class="row mb-4">
 									<div class="col-lg-6 mb-4">
 										<div class="form-group position-relative">
@@ -448,6 +451,7 @@
 						name: '',
 						message: '',
 						subject: '',
+						formStatus: '',
 
 						fe_skills: [
 							{
@@ -528,6 +532,11 @@
 				methods: {
 					showDetailService(title, detail) {
 						$('.service__title').text(title);
+
+						setTimeout(() => {
+							var modalHeaderHeight = $('#modalDetailService .modal-header').height();
+							$('.detail__service__close').css('height', `${modalHeaderHeight}px`);
+						}, 200);
 						$('.service__detail').html(detail);
 
 						$('#modalDetailService').modal('show');
@@ -538,8 +547,9 @@
 						
 						$('#modalStartProject').modal('show');
 					},
-					submitForm() {
+					submitForm(e) {
 						var self = this;
+						var form = document.getElementById(e.target.id);
 
 						if(self.email == '' || self.email.length == 0) {
 							return swal('', 'Please input your email address', 'warning');
@@ -549,50 +559,38 @@
 							return swal('', 'Please input your message', 'warning');
 						}
 
-						$.ajax({
-							"async": true,
-							"crossDomain": true,
-							"url": "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",
-							"method": "POST",
-							"headers": {
-								"content-type": "application/json",
-								"X-RapidAPI-Host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-								"X-RapidAPI-Key": "e8318631f6msh71727ad978c0c4ap192884jsn12fcd88b7b0c"
-							},
-							"processData": false,
-							"data": {
-								"personalizations": [
-									{
-										"to": [
-											{
-												"email": "dhimasyoga14@gmail.com"
-											}
-										],
-										"subject": `${self.subject}`
-									}
-								],
-								"from": {
-									"email": `${self.email}`
-								},
-								"content": [
-									{
-										"type": "text/plain",
-										"value": `${self.message}`
-									}
-								]
-							},
-							success: function(res) {
-								self.email = '';
-								self.name = '';
-								self.message = '';
-								self.subject = '';
+						swal({
+							title: "",
+							text: "Sending Message . . .",
+							icon: "/resources/images/rocket-loading.gif",
+							closeOnClickOutside : false,
+							buttons: false,
+						});
 
-								return swal('Wohoo!', "Thank you for reaching me out. I'll send a reply within hours or days", 'success');
-							},
-							fail: function(err) {
-								console.log('Error : ', err);
-								return swal('Oops!', "There's and error when sending the form data\nPlease contact me further through Email/Whatsapp i provide in the Contact section", error);
+						var data = new FormData(e.target);
+						fetch(event.target.action, {
+							method: form.method,
+							body: data,
+							headers: {
+								'Accept': 'application/json'
 							}
+						}).then(response => {
+							if (response.ok) {
+								form.reset();
+								return swal('Wohoo!', "Thank you for reaching me out.\nI'll send a reply within hours or days", 'success');
+							} else {
+								response.json().then(data => {
+									if (Object.hasOwn(data, 'errors')) {
+										var errors = data["errors"].map(error => error["message"]).join(", ")
+										console.log('Errors : ', errors);
+										return swal('Oops!', "Error when sending the form data\nPlease contact me further through Email/Whatsapp i provide in the Contact section", 'error');
+									} else {
+										return swal('Oops!', "There's an error when sending the form data\nPlease contact me further through Email/Whatsapp i provide in the Contact section", 'error');
+									}
+								})
+							}
+						}).catch(error => {
+							status.innerHTML = "Oops! There was a problem submitting your form"
 						});
 					}
 				},
@@ -630,6 +628,16 @@
 				$('#modalStartProject').on('shown.bs.modal', function() {
 					$('[autofocus]').focus();
 				})
+
+				$('#modalDetailService').on('hidden.bs.modal', function() {
+					$('.service__title').text('');
+					$('.detail__service__close').css('height', '63px');
+				});
+
+				// Navbar drawer (mobile)
+				$('.nav__drawer li').click(function() {
+					$('.sidebar__toggle').prop('checked', false);
+				});
 			});
 
 			// Scroll Reveal
