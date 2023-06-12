@@ -196,7 +196,9 @@ body {
                 }
 
                 .image-center-container.photo-both {
-                    margin-top: 2em;
+                    margin-top: 0;
+                    width: 200px;
+                    height: 200px;
                 }
 
                 .card-body {
